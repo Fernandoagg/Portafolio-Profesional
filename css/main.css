@@ -1,127 +1,273 @@
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-        *{
-            margin:auto;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap');
 
-        }
-        h1{
-            font-family: 'Outfit', sans-serif;
-        }
-        body{
-            font-family: 'Roboto', sans-serif;
-        }
-        header {
-            background-color: lightblue;
-            color: aliceblue;
-            padding: 30px 0;
-            text-align: center;
-        }
+:root {
+    --color-principal: #87CEEB;
+    --color-secundario: #5F9EA0;
+    --color-acento: #FFA500;
+    --color-texto-claro: #F0F8FF;
+    --color-texto-oscuro: #00008B;
+    --color-fondo-base: #ffffff;
+    
+    --fuente-principal: 'Roboto', sans-serif;
+    --fuente-secundaria: 'Outfit', sans-serif;
+}
 
-        nav{
-            background-color: cadetblue;
-            padding: 30px 20px;
-            border-bottom: 5px solid lightblue;
-            font-size: 15px;
-        }
-        
-        nav a{
-            color: aliceblue;
-            text-decoration: none;
-            font-size: 25px;
-            padding: 10px;
-            text-transform: capitalize;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
 
-        nav a:hover{
-            background-color: lightblue;
-            border-radius: 10px;
-        }
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    background-color: var(--color-fondo-base);
+    color: #333;
+}
 
-        #bienvenida{
-            padding: 30px;
-            text-align: center;
-        }
+h1, h2, h3 {
+    font-family: var(--fuente-secundaria);
+    font-weight: 700;
+}
 
-        #proyectos {
-            background-color: cadetblue;
-            padding: 30px 20px;
-            text-align: center;
-        }
+.contenedor_seccion {
+    padding: 50px 5%;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
 
-        .lista-proyectos {
-            display: flex;
-            padding-top: 20px;
-        }
+header {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 30px 0;
+    text-align: center;
+}
 
-        .proyecto {
-            width: 30%;
-            border: solid 2px darkblue;
-            padding: 5px;
-            border-radius: 10px;
-            
-        }
+header h4 {
+    font-weight: 400;
+    opacity: 0.9;
+}
 
-        .proyecto h3{
-            color: orange;
-        }
+nav {
+    background-color: var(--color-secundario);
+    display: flex;
+    justify-content: center; 
+    padding: 15px 20px;
+    border-bottom: 5px solid var(--color-principal);
+}
 
-        #competencias{
-            padding: 30px 30px;
-        }
+nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-size: 1.25rem; 
+    padding: 10px 20px;
+    text-transform: uppercase; 
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-radius 0.3s ease; 
+}
 
-        #competencias h2{
-            padding-bottom:  30px;
-            text-align: center;
-        }
+nav a:hover {
+    background-color: var(--color-principal);
+    border-radius: 5px; 
+}
 
-        #competencias ul{
-            list-style-type: none;
-            display: flex;
-        }
+#bienvenida {
+    text-align: center;
+}
 
-        #competencias ul li{
-            background-color: lightblue;
-            color: aliceblue;
-            border-radius: 10px;
-            padding: 20px;
-        }
+#bienvenida img {
+    margin-top: 20px;
+    border-radius: 50%;
+    border: 5px solid var(--color-principal);
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+}
 
-        #contacto{
-            padding: 30px;
-            border-top: 2px dashed darkblue;
-        }
+#bienvenida p {
+    margin: 15px auto;
+    max-width: 800px;
+}
 
-        .campos{
-            padding: 10pxb;
-            clear: both;
-            font-size: 16px;
-        }
+#bienvenida mark {
+    background-color: var(--color-principal);
+    color: var(--color-texto-oscuro);
+    padding: 2px 5px;
+}
 
-        .campos label{
-            font-size: 20px;
-        }
+#proyectos {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    text-align: center;
+}
 
-        .campos input{
-            font-size: 20px;
-            padding: 5px;
-            border: solid 2px darkblue;
-            border-radius: 10px;
-            width: 30%;
-        }
+.lista_proyectos { 
+    display: flex;
+    gap: 20px; 
+    flex-wrap: wrap; 
+    padding-top: 30px;
+    justify-content: center; 
+}
 
-        .campos button{
-            padding: 10px;
-            border-radius: 15px;
-            background-color: lightblue;
-            color: aliceblue;
-            width: 20%;
-            border: none;
-            font-size: 20px;
-        }
-        footer {
-            padding: 30px 30px;
-            background-color: lightblue;
-            text-align: center;
-            color: aliceblue;
-            font-size: 14px;
-            border-top: solid 5px darkblue;
-        }
+.contenedor_proyecto { 
+    flex-basis: 30%; 
+    min-width: 280px;
+    border: solid 2px var(--color-texto-oscuro);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--color-fondo-base); 
+    color: #333;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor_proyecto:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor_proyecto h3 {
+    color: var(--color-acento);
+    margin-bottom: 10px;
+}
+
+#competencias h2 {
+    text-align: center;
+    margin-bottom: 40px; 
+}
+
+#competencias hr {
+    margin: 30px auto;
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 50%;
+}
+
+#habilidades_tecnicas ul { 
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#habilidades_tecnicas ul li {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#competencias figure {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#competencias figure label {
+    flex-basis: 120px;
+    font-weight: 500;
+}
+
+#competencias progress {
+    flex-grow: 1;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#competencias progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+#competencias progress::-webkit-progress-value {
+    background-color: var(--color-secundario);
+    border-radius: 3px;
+}
+
+#competencias progress::-moz-progress-bar {
+    background-color: var(--color-secundario);
+}
+
+#contacto {
+    border-top: 2px dashed var(--color-texto-oscuro);
+}
+
+#contacto h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#contacto p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#contacto form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.campo_formulario { 
+    margin-bottom: 20px;
+}
+
+.campo_formulario label {
+    display: block; 
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.campo_formulario input {
+    font-size: 1rem;
+    padding: 10px;
+    border: solid 1px var(--color-secundario); 
+    border-radius: 5px;
+    width: 100%; 
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.campo_formulario input:focus {
+    border-color: var(--color-principal);
+    outline: none;
+    box-shadow: 0 0 5px rgba(135, 206, 235, 0.5);
+}
+
+.campo_formulario button {
+    padding: 10px 30px; 
+    border-radius: 5px;
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    border: none;
+    font-size: 1.25rem;
+    width: auto; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: block;
+    margin-left: 0;
+}
+
+.campo_formulario button:hover {
+    background-color: #6aabcb; 
+}
+
+footer {
+    padding: 20px 30px;
+    background-color: var(--color-principal);
+    text-align: center;
+    color: var(--color-texto-claro);
+    font-size: 0.9rem;
+    border-top: solid 5px var(--color-texto-oscuro);
+}
